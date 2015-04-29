@@ -6,7 +6,7 @@ import android.hardware.SensorEventListener;
 
 public class Colisao implements SensorEventListener {
 
-	private static final float GRAVIDADE = 9.81f;
+	private static final int GRAVIDADE = 9;
 	
 	private final double forcaDeImpacto;
 	private final ColisaoCallback callback;
@@ -22,20 +22,22 @@ public class Colisao implements SensorEventListener {
 		final float y = event.values[1];//y
 		final float z = event.values[2];//z
 		
-		double escala = Math.sqrt((x*x + y*y + z*z));
+		int forca = (int)Math.sqrt((x*x + y*y + z*z));
 		
-		double forcaGerada = escala - GRAVIDADE;
+		int forcaGerada = forca - GRAVIDADE;
 		
 		if(forcaGerada > forcaDeImpacto) {
 			callback.colisaoOcorrida(forcaGerada);
 		}
+		callback.forcaAtual(forcaGerada);
 	}
 
 	@Override
 	public void onAccuracyChanged(Sensor sensor, int accuracy) {}
 
 	public static interface ColisaoCallback {
-		void colisaoOcorrida(double forcaDaColisao);
+		void colisaoOcorrida(int forcaDaColisao);
+		void forcaAtual(int forcaAtual);
 	}
 	
 }
