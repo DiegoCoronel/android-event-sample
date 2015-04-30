@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:lineSpacingExtra="5sp"
+            android:text="Projeto desenvolvido durante o Hackaton do EPA! (II Encontro de Projetos em Ambientes Interativos) com o tema Ambientes Inteligentes."
+            android:textColor="#767676"
+            android:textSize="14sp"
+            android:textStyle="italic|bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Versão 1.0b"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus tempor justo quis tempus.
+- Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+- Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin porttitor mattis mi, id mollis lectus pharetra ac."
+            android:textColor="#767676"
+            android:textSize="14sp"
+            android:lineSpacingExtra="5sp" />
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Versão 0.5b"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus tempor justo quis tempus.
+- Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+- Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin porttitor mattis mi, id mollis lectus pharetra ac."
+            android:textColor="#767676"
+            android:textSize="14sp"
+            android:lineSpacingExtra="5sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
