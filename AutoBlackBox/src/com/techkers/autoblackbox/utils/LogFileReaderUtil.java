@@ -1,4 +1,4 @@
-package com.techkers.autoblackbox;
+package com.techkers.autoblackbox.utils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,9 +13,9 @@ import android.util.Log;
 import com.techkers.autoblackbox.utils.ForcaUtil;
 import com.techkers.autoblackbox.vo.Evento;
 
-public final class LogFileReader {
+public final class LogFileReaderUtil {
 	
-	private LogFileReader() {
+	private LogFileReaderUtil() {
 		//do nothing
 	}
 
