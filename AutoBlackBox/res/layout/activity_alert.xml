@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e74c3c" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+	
+		<TextView
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginLeft="16dp"
+		    android:layout_marginRight="16dp"
+		    android:layout_marginBottom="16dp"
+		    android:gravity="center"
+		    android:text="ACIDENTE!!!"
+		    android:textColor="#ffffff"
+		    android:textSize="34sp" ></TextView>
+		    
+		<ImageView
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center"
+		    android:layout_marginBottom="16dp"
+		    android:clickable="false"
+		    android:contentDescription="Ocorreu um acidente!"
+		    android:scaleType="fitCenter"
+		    android:src="@drawable/broken_car" />
+	    
+		<TextView
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginLeft="16dp"
+		    android:layout_marginRight="16dp"
+		    android:gravity="center"
+		    android:text="O AVISO SERÁ ENVIADO EM:"
+		    android:textColor="#ffffff"
+		    android:textSize="14sp"
+		    android:textStyle="bold" ></TextView>
+		
+		<TextView
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginBottom="16dp"
+		    android:layout_marginLeft="16dp"
+		    android:layout_marginRight="16dp"
+		    android:gravity="center"
+		    android:text="00:59"
+		    android:textColor="#ffffff"
+		    android:textSize="76sp" ></TextView>
+
+		<Button
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center"
+		    android:text="CANCELAR"
+		    android:textColor="#e74c3c" />
+	
+	</LinearLayout>
+    
+</RelativeLayout>
