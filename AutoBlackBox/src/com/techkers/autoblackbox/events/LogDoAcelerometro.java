@@ -29,6 +29,7 @@ public class LogDoAcelerometro implements SensorEventListener {
 	@Override
 	public void onSensorChanged(SensorEvent event) {
 		if(ultimoEvento + INTERVALO_EM_SEGUNDOS < System.currentTimeMillis()) {
+			ultimoEvento = System.currentTimeMillis();
 			StringBuilder builder = new StringBuilder();
 			builder.append((int)event.values[0])
 					.append(";")
@@ -60,7 +61,7 @@ public class LogDoAcelerometro implements SensorEventListener {
 			FileWriter fileWriter = null;
 			try {
 				// Cria o arquivo onde serão salvas as informações.
-				File file = new File(contexto.getExternalFilesDir(null).getPath(), "/log_acelerometro.txt");
+				File file = new File(contexto.getFilesDir().getPath()+"/log_acelerometro.txt");
 				fileWriter = new FileWriter(file, true);
 				for(String texto : logs) {
 					fileWriter.append(texto);
