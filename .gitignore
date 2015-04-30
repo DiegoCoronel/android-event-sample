@@ -1,3 +1,5 @@
 /AutoBlackBox/bin
 /AutoBlackBox/gen
 /AutoBlackBox/.settings
+Thumbs.db
+.gitignore
