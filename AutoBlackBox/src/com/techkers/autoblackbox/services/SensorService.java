@@ -16,7 +16,7 @@ public class SensorService extends IntentService {
 	private SensorManager mSensorManager;
 	private Sensor mSensor;
 
-	private boolean colisao;
+	private long ultimoEvento;
 	
 	public SensorService() {
 		super("SensorService");
@@ -41,10 +41,11 @@ public class SensorService extends IntentService {
 
 		@Override
 		public void colisaoOcorrida(int forcaDaColisao) {
-			if(!colisao) {
-				colisao = true;
+			final long ESPERA_ENTRE_EVENTOS = 5000; 
+			if(ultimoEvento +  ESPERA_ENTRE_EVENTOS < System.currentTimeMillis()) {
 				Intent intent = new Intent(ColisaoBroadcast.ACTION_COLISAO);
 				service.sendBroadcast(intent);
+				ultimoEvento = System.currentTimeMillis();
 			}
 		}
 	}
