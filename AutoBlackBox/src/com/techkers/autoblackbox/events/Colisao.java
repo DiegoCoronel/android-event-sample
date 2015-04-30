@@ -6,13 +6,12 @@ import android.hardware.SensorEventListener;
 
 public class Colisao implements SensorEventListener {
 
-	private static final int GRAVIDADE = 9;
+	private static final int GRAVIDADE  = 9;
+	private static final int FORCA_DE_COLISAO = 15;
 	
-	private final double forcaDeImpacto;
 	private final ColisaoCallback callback;
 	
-	public Colisao(double forcaDeImpacto, ColisaoCallback callback) {
-		this.forcaDeImpacto = forcaDeImpacto;
+	public Colisao(ColisaoCallback callback) {
 		this.callback = callback;
 	}
 	
@@ -26,7 +25,7 @@ public class Colisao implements SensorEventListener {
 		
 		int forcaGerada = forca - GRAVIDADE;
 		
-		if(forcaGerada > forcaDeImpacto) {
+		if(forcaGerada > FORCA_DE_COLISAO) {
 			callback.colisaoOcorrida(forcaGerada);
 		}
 	}

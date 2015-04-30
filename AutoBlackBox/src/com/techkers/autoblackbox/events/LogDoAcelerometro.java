@@ -36,6 +36,8 @@ public class LogDoAcelerometro implements SensorEventListener {
 					.append((int)event.values[1])
 					.append(";")
 					.append((int)event.values[2])
+					.append(";")
+					.append(System.currentTimeMillis())
 					.append("\n");
 					
 			log[posicaoAtualDoLog++ % MAXIMO_DE_INTERVALOS] = builder.toString();
