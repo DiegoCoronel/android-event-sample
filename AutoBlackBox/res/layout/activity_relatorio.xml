@@ -2,23 +2,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" >
+    android:background="#ffffff">
 
-    <TextView
-        android:id="@+id/horaAcidente"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-    
-    <TextView
-        android:id="@+id/forcaAcidente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world"
-        android:layout_below="@id/horaAcidente" 
-        />
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+	    <TextView
+	        android:id="@+id/labelHoraAcidente"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="16dp"
+	        android:layout_marginRight="16dp"
+	        android:text="Força da Batida"
+	        android:textColor="#4d4d4d"
+	        android:textSize="14sp"
+	        android:textStyle="bold" />
+	
+	    <TextView
+	        android:id="@+id/horaAcidente"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/labelHoraAcidente"
+	        android:layout_marginBottom="32dp"
+	        android:layout_marginLeft="16dp"
+	        android:layout_marginRight="16dp"
+	        android:text="@string/hello_world"
+	        android:textColor="#767676"
+	        android:textSize="40sp" />
+	
+	    <TextView
+	        android:id="@+id/labelForcaAcidente"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/horaAcidente"
+	        android:layout_marginLeft="16dp"
+	        android:layout_marginRight="16dp"
+	        android:text="Hora do Acidente:"
+	        android:textColor="#4d4d4d"
+	        android:textSize="14sp"
+	        android:textStyle="bold" />
+	
+	    <TextView
+	        android:id="@+id/forcaAcidente"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/labelForcaAcidente"
+	        android:layout_marginLeft="16dp"
+	        android:layout_marginRight="16dp"
+	        android:text="@string/hello_world"
+	        android:textColor="#767676"
+	        android:textSize="40sp" />
+    </LinearLayout>
 
 </RelativeLayout>
