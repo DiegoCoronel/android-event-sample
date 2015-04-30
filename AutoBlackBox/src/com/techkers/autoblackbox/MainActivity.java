@@ -14,35 +14,36 @@ import com.techkers.autoblackbox.events.LogDoAcelerometro;
 
 public class MainActivity extends Activity {
 
-	private SensorManager mSensorManager;
-	private Sensor mSensor;
+
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        mSensorManager.registerListener(new LogDoAcelerometro(this), mSensor, SensorManager.SENSOR_DELAY_UI);
-        mSensorManager.registerListener(new Colisao(29, new ColisaoCallback() {
-        	
-        	private double forcaMaxima;
-        	
-			@Override
-			public void colisaoOcorrida(int forcaDaColisao) {
-				((TextView)findViewById(R.id.colisao)).setText("Valor da for�a: " + forcaDaColisao);
-			}
-
-			@Override
-			public void forcaAtual(int forcaAtual) {
-				if(forcaMaxima < forcaAtual) {
-					forcaMaxima = forcaAtual;
-					((TextView)findViewById(R.id.forcaMaxima)).setText("Valor da for�a atual: " + forcaMaxima);
-				}
-				((TextView)findViewById(R.id.forcaAtual)).setText("Valor da for�a m�xima: " + forcaAtual);
-			}
-		} ), mSensor, SensorManager.SENSOR_DELAY_UI);
+		
+		
+//		mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+//        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+//        mSensorManager.registerListener(new LogDoAcelerometro(this), mSensor, SensorManager.SENSOR_DELAY_UI);
+//        mSensorManager.registerListener(new Colisao(29, new ColisaoCallback() {
+//        	
+//        	private double forcaMaxima;
+//        	
+//			@Override
+//			public void colisaoOcorrida(int forcaDaColisao) {
+//				((TextView)findViewById(R.id.colisao)).setText("Valor da for�a: " + forcaDaColisao);
+//			}
+//
+//			@Override
+//			public void forcaAtual(int forcaAtual) {
+//				if(forcaMaxima < forcaAtual) {
+//					forcaMaxima = forcaAtual;
+//					((TextView)findViewById(R.id.forcaMaxima)).setText("Valor da for�a atual: " + forcaMaxima);
+//				}
+//				((TextView)findViewById(R.id.forcaAtual)).setText("Valor da for�a m�xima: " + forcaAtual);
+//			}
+//		} ), mSensor, SensorManager.SENSOR_DELAY_UI);
 	}
 
 	@Override

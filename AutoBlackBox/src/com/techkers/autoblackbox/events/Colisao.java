@@ -29,7 +29,6 @@ public class Colisao implements SensorEventListener {
 		if(forcaGerada > forcaDeImpacto) {
 			callback.colisaoOcorrida(forcaGerada);
 		}
-		callback.forcaAtual(forcaGerada);
 	}
 
 	@Override
@@ -37,7 +36,6 @@ public class Colisao implements SensorEventListener {
 
 	public static interface ColisaoCallback {
 		void colisaoOcorrida(int forcaDaColisao);
-		void forcaAtual(int forcaAtual);
 	}
 	
 }

@@ -11,6 +11,7 @@
      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
      
     <application
+        android:name="com.techkers.autoblackbox.AutoBlackBoxApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -24,6 +25,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+<!--          <receiver android:name="com.divus.exemplobroadcastreceiver.AfterBootBroadcastReceiver" > -->
+<!--             <intent-filter> -->
+<!--                 <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
+<!--                 <category android:name="android.intent.category.DEFAULT" /> -->
+<!--             </intent-filter> -->
+<!--         </receiver> -->
+
+			<service android:name="com.techkers.autoblackbox.services.SensorService" />
     </application>
     
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+     
 </manifest>
