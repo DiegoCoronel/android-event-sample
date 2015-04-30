@@ -30,34 +30,31 @@
         
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
         </activity>
         
         <activity
             android:name=".InfoPessoalActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_info_pessoal" >
         </activity>
         
          <activity
+             android:screenOrientation="portrait"
             android:name="com.techkers.autoblackbox.RelatorioActivity"
             android:label="@string/app_name" >
         </activity>
         
          <activity
+             android:screenOrientation="portrait"
             android:name="com.techkers.autoblackbox.AlertaActivity"
             android:label="@string/app_name" >
         </activity>
-<!--          <receiver android:name="com.divus.exemplobroadcastreceiver.AfterBootBroadcastReceiver" > -->
-<!--             <intent-filter> -->
-<!--                 <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
-<!--                 <category android:name="android.intent.category.DEFAULT" /> -->
-<!--             </intent-filter> -->
-<!--         </receiver> -->
 
-			<service android:name="com.techkers.autoblackbox.services.SensorService" />
+		<service android:name="com.techkers.autoblackbox.services.SensorService" />
     </application>
     
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>

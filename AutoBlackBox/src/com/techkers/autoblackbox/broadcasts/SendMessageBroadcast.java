@@ -1,15 +1,15 @@
 package com.techkers.autoblackbox.broadcasts;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import com.techkers.autoblackbox.utils.ContatoUtil;
 import com.techkers.autoblackbox.utils.SmsUtil;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
+public class SendMessageBroadcast {
 
-public class SendMessageBroadcast extends BroadcastReceiver {
-
+	public static final String ACTION_SEND_MESSAGE = "autoblackbox.events.SendMessageBroadcast";
+	
     private static final String CONTATO4 = "contato4";
 
 	private static final String CONTATO3 = "contato3";
@@ -30,19 +30,18 @@ public class SendMessageBroadcast extends BroadcastReceiver {
 
 	public static final String PREFS_INFO_PESSOAL = "info_pessoais";
 	
-	@Override
-	public void onReceive(Context context, Intent intent) {
+	public void enviarAlerta(Context context) {
 		enviarParaContato(context, CONTATO1);
 		enviarParaContato(context, CONTATO2);
 		enviarParaContato(context, CONTATO3);
 		enviarParaContato(context, CONTATO4);
 		enviarParaContato(context, CONTATO5);
 		enviarParaContato(context, CONTATO6);
-	}
+	} 
 
 	private void enviarParaContato(Context context, String contatoID) {
 		String contato = recuperarValorContatos(context, contatoID);
-		if (!contato.endsWith("")) {
+		if (!contato.equals("")) {
 			String numero = ContatoUtil.getTelefone(context, contato);
 			String mensagem = "Aviso de acidente: Talvez eu tenha sofrido um acidente. Por favor tente me contactar, caso não consiga, chame socorro. Seguem minhas informações: Tipo Sanguíneo "
 					+ recuperarValorContatos(context, PREF_TIPO_SANG) + " - Alergia: " + recuperarValorContatos(context, PREF_ALERGIA) + " - Outras info.: " + recuperarValorContatos(context, PREF_OBS_GERAL);

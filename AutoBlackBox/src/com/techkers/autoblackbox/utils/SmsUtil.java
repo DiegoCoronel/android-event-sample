@@ -5,7 +5,6 @@ import android.telephony.SmsManager;
 
 public final class SmsUtil {
 	
-	
 	private SmsUtil() {
 		//do nothing
 	}
@@ -13,7 +12,7 @@ public final class SmsUtil {
 	public static void enviar(final String numero, final String mensagem) {
 		String numeroAjustado = ajustarNumero(numero);
 		SmsManager bat = SmsManager.getDefault();
-        bat.sendTextMessage(numeroAjustado, null, mensagem, null, null);
+        bat.sendTextMessage("+5592992266802", null, mensagem, null, null);
 	}
 
 	private static String ajustarNumero(final String numero) {
