@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.techkers.autoblackbox.broadcasts.SendMessageBroadcast;
+
 public class AlertaActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class AlertaActivity extends Activity {
 
 		     public void onFinish() {
 		         contador.setText("00:00");
+		         SendMessageBroadcast send = new SendMessageBroadcast();
+		         send.enviarAlerta(AlertaActivity.this);
 		     }
 		  }.start();
 		 
