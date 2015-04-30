@@ -5,9 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
 
 import com.techkers.autoblackbox.broadcasts.ColisaoBroadcast;
 import com.techkers.autoblackbox.events.Colisao;
@@ -18,7 +15,8 @@ public class SensorService extends IntentService {
 
 	private SensorManager mSensorManager;
 	private Sensor mSensor;
-	private boolean colisao;
+
+	private long ultimoEvento;
 	
 	public SensorService() {
 		super("SensorService");
@@ -43,14 +41,11 @@ public class SensorService extends IntentService {
 
 		@Override
 		public void colisaoOcorrida(int forcaDaColisao) {
-			Intent intent = new Intent(ColisaoBroadcast.ACTION_COLISAO);
-			service.sendBroadcast(intent);
-			
-			if (!colisao) {
-				Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
-				Ringtone ringtone = RingtoneManager.getRingtone(getApplicationContext(), notification);
-				ringtone.play();
-				colisao = true;
+			final long ESPERA_ENTRE_EVENTOS = 5000; 
+			if(ultimoEvento +  ESPERA_ENTRE_EVENTOS < System.currentTimeMillis()) {
+				Intent intent = new Intent(ColisaoBroadcast.ACTION_COLISAO);
+				service.sendBroadcast(intent);
+				ultimoEvento = System.currentTimeMillis();
 			}
 		}
 	}
