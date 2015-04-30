@@ -140,6 +140,9 @@ public class InfoPessoalActivity extends Activity implements OnClickListener {
 		if (!valor.equals("")) {
 			final ContentResolver cr = getContentResolver();
 			Bitmap bitFoto = getPhoto(cr, Long.valueOf(valor));
+			if (bitFoto == null) {
+				bitFoto = BitmapFactory.decodeResource(getResources(), R.drawable.blank_avatar);
+			}
 			campo.setImageBitmap(bitFoto);
 		}
 	}
@@ -170,6 +173,10 @@ public class InfoPessoalActivity extends Activity implements OnClickListener {
 				if (c.moveToFirst()) {
 					final Long id = c.getLong(c.getColumnIndexOrThrow(ContactsContract.Contacts._ID));
 					Bitmap bitFoto = getPhoto(cr, id);
+					if (bitFoto == null) {
+						bitFoto = BitmapFactory.decodeResource(getResources(), R.drawable.blank_avatar);
+					}
+					
 					switch (contatoSelecionado) {
 					case R.id.imgFoto1:
 						imgFoto1.setImageBitmap(bitFoto);
