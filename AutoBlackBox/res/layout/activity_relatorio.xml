@@ -8,8 +8,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
         android:orientation="vertical"
-        android:paddingBottom="16dp" >
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp" >
 
 	    <TextView
 	        android:id="@+id/labelHoraAcidente"
@@ -17,7 +22,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginLeft="16dp"
 	        android:layout_marginRight="16dp"
-	        android:text="Força da Batida"
+	        android:text="Hora da Batida"
 	        android:textColor="#4d4d4d"
 	        android:textSize="14sp"
 	        android:textStyle="bold" />
@@ -41,7 +46,7 @@
 	        android:layout_below="@+id/horaAcidente"
 	        android:layout_marginLeft="16dp"
 	        android:layout_marginRight="16dp"
-	        android:text="Hora do Acidente:"
+	        android:text="Forca do Acidente:"
 	        android:textColor="#4d4d4d"
 	        android:textSize="14sp"
 	        android:textStyle="bold" />
