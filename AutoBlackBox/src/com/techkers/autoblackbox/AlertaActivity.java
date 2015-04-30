@@ -19,8 +19,8 @@ public class AlertaActivity extends Activity {
 		new CountDownTimer(30000, 1000) {
 
 		     public void onTick(long millisUntilFinished) {
-		         contador.setText("00:" + millisUntilFinished / 1000);
-		         
+		    	 long segundos = millisUntilFinished / 1000;
+		         contador.setText("00:" + ((segundos) < 10 ? "0" + segundos : segundos));
 		     }
 
 		     public void onFinish() {
