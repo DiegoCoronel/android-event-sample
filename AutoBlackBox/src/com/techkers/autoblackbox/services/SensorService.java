@@ -9,6 +9,7 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 
+import com.techkers.autoblackbox.broadcasts.ColisaoBroadcast;
 import com.techkers.autoblackbox.events.Colisao;
 import com.techkers.autoblackbox.events.Colisao.ColisaoCallback;
 import com.techkers.autoblackbox.events.LogDoAcelerometro;
@@ -31,7 +32,7 @@ public class SensorService extends IntentService {
 		mSensorManager.registerListener(new LogDoAcelerometro(this), mSensor, SensorManager.SENSOR_DELAY_UI);
 		mSensorManager.registerListener(new Colisao(new ColisaoCallbackImpl(this)), mSensor, SensorManager.SENSOR_DELAY_UI);
 	}
-	
+
 	public class ColisaoCallbackImpl implements ColisaoCallback {
 
 		private SensorService service;
@@ -39,18 +40,17 @@ public class SensorService extends IntentService {
 		public ColisaoCallbackImpl(final SensorService service) {
 			this.service = service;
 		}
-		
+
 		@Override
 		public void colisaoOcorrida(int forcaDaColisao) {
-			Intent intent = new Intent("autoblackbox.events.ColisaoBroadcast");
+			Intent intent = new Intent(ColisaoBroadcast.ACTION_COLISAO);
 			service.sendBroadcast(intent);
 			
-			if(!colisao){
-			 Uri notification =
-			 RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
-			 Ringtone ringtone = RingtoneManager.getRingtone(getApplicationContext(), notification);
-			 ringtone.play();
-			 colisao = true;
+			if (!colisao) {
+				Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
+				Ringtone ringtone = RingtoneManager.getRingtone(getApplicationContext(), notification);
+				ringtone.play();
+				colisao = true;
 			}
 		}
 	}
