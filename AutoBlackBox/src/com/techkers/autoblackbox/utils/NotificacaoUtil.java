@@ -16,7 +16,7 @@ import android.os.Build;
 /**
  * Class to generate notifications.
  */
-public final class NotificationUtil {
+public final class NotificacaoUtil {
 
     /**
      * API Level 17 - Android 4.2 or higher
