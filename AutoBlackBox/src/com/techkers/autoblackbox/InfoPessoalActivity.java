@@ -42,7 +42,7 @@ public class InfoPessoalActivity extends Activity implements OnClickListener {
 
 	public static final String PREFS_INFO_PESSOAL = "info_pessoais";
 	
-	private static final int ACTION_VIEW_CONTACTS = 0;
+	private static final int ACTION_PICK_CONTACTS = 0;
 	
 	private EditText edtTpSanguineo;
 	private EditText edtAlergias;
@@ -123,7 +123,7 @@ public class InfoPessoalActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		this.contatoSelecionado = v.getId();
 		Intent intent = new Intent(Intent.ACTION_PICK, Uri.parse("content://contacts/people/"));
-        startActivityForResult(intent, ACTION_VIEW_CONTACTS);
+        startActivityForResult(intent, ACTION_PICK_CONTACTS);
 	}
 	
 	public void recuperarValor(String chave, EditText campo) {
@@ -161,7 +161,7 @@ public class InfoPessoalActivity extends Activity implements OnClickListener {
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode == ACTION_VIEW_CONTACTS) {
+		if (requestCode == ACTION_PICK_CONTACTS) {
 			if (resultCode == RESULT_OK) {
 				Uri contactData = data.getData();
 				final ContentResolver cr = getContentResolver();
