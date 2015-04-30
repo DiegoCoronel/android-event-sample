@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="#ffffff" >
+
+    <EditText
+        android:id="@+id/edtTpSanguineo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#767676"
+        android:hint="@string/tipo_sangu_neo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="46dp"
+        android:ems="10" >
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/edtAlergias"
+        android:hint="@string/alergias"
+        android:layout_width="match_parent"
+        android:textColor="#767676"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtTpSanguineo"
+        android:layout_marginTop="10dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/edtObsGeral"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtAlergias"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Observações Gerais"
+        android:minLines="4"
+        android:textColor="#767676" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#767676"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edtObsGeral"
+        android:layout_marginTop="20dp"
+        android:text="Avisar Contatos:" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/lnContatos1"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="10dp" >
+
+        <ImageView
+            android:id="@+id/imgFoto1"
+            android:layout_weight="1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/add_button" />
+
+        <ImageView
+            android:id="@+id/imgFoto2"
+            android:layout_weight="1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/add_button" />
+
+        <ImageView
+            android:id="@+id/imgFoto3"            
+            android:layout_weight="1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/add_button" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/lnContatos2"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lnContatos1"
+        android:layout_marginTop="10dp" >
+
+        <ImageView
+            android:id="@+id/imgFoto4"
+            android:layout_weight="1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/add_button" />
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/imgFoto5"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/add_button" />
+
+        <ImageView
+            android:id="@+id/imgFoto6"
+            android:layout_weight="1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/add_button" />
+
+    </LinearLayout>
+
+</RelativeLayout>
