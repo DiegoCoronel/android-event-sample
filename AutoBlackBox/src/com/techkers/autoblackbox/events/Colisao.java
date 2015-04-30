@@ -8,7 +8,7 @@ import android.hardware.SensorEventListener;
 
 public class Colisao implements SensorEventListener {
 
-	private static final int FORCA_DE_COLISAO = 15;
+	private static final int FORCA_DE_COLISAO = 10;
 	
 	private final ColisaoCallback callback;
 	
