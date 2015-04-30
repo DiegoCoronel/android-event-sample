@@ -1,7 +1,7 @@
 package com.techkers.autoblackbox.broadcasts;
 
 import com.techkers.autoblackbox.schedules.CollisionEventScheduler;
-import com.techkers.autoblackbox.utils.NotificationUtil;
+import com.techkers.autoblackbox.utils.NotificacaoUtil;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -14,7 +14,7 @@ public class ColisaoBroadcast extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		//NOTIFICAR
-		NotificationUtil.create(context, "", "", 1, new Intent());
+		NotificacaoUtil.create(context, "", "", 1, new Intent());
 		
 		//TOCAR
 		

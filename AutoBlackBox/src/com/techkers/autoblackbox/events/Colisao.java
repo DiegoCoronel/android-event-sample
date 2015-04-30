@@ -1,12 +1,13 @@
 package com.techkers.autoblackbox.events;
 
+import com.techkers.autoblackbox.utils.ForcaUtil;
+
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 
 public class Colisao implements SensorEventListener {
 
-	private static final int GRAVIDADE  = 9;
 	private static final int FORCA_DE_COLISAO = 15;
 	
 	private final ColisaoCallback callback;
@@ -21,9 +22,7 @@ public class Colisao implements SensorEventListener {
 		final float y = event.values[1];//y
 		final float z = event.values[2];//z
 		
-		int forca = (int)Math.sqrt((x*x + y*y + z*z));
-		
-		int forcaGerada = forca - GRAVIDADE;
+		int forcaGerada = ForcaUtil.calcularForca(x, y, z);
 		
 		if(forcaGerada > FORCA_DE_COLISAO) {
 			callback.colisaoOcorrida(forcaGerada);
