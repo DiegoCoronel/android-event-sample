@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.techkers.autoblackbox.events.Colisao;
 import com.techkers.autoblackbox.events.Colisao.ColisaoCallback;
+import com.techkers.autoblackbox.events.LogDoAcelerometro;
 
 public class MainActivity extends Activity {
 
@@ -23,22 +24,23 @@ public class MainActivity extends Activity {
 		
 		mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mSensorManager.registerListener(new LogDoAcelerometro(this), mSensor, SensorManager.SENSOR_DELAY_UI);
         mSensorManager.registerListener(new Colisao(29, new ColisaoCallback() {
         	
         	private double forcaMaxima;
         	
 			@Override
 			public void colisaoOcorrida(int forcaDaColisao) {
-				((TextView)findViewById(R.id.colisao)).setText("Valor da força: " + forcaDaColisao);
+				((TextView)findViewById(R.id.colisao)).setText("Valor da forï¿½a: " + forcaDaColisao);
 			}
 
 			@Override
 			public void forcaAtual(int forcaAtual) {
 				if(forcaMaxima < forcaAtual) {
 					forcaMaxima = forcaAtual;
-					((TextView)findViewById(R.id.forcaMaxima)).setText("Valor da força atual: " + forcaMaxima);
+					((TextView)findViewById(R.id.forcaMaxima)).setText("Valor da forï¿½a atual: " + forcaMaxima);
 				}
-				((TextView)findViewById(R.id.forcaAtual)).setText("Valor da força máxima: " + forcaAtual);
+				((TextView)findViewById(R.id.forcaAtual)).setText("Valor da forï¿½a mï¿½xima: " + forcaAtual);
 			}
 		} ), mSensor, SensorManager.SENSOR_DELAY_UI);
 	}
