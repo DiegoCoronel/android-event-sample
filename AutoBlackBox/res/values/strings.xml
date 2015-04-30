@@ -8,5 +8,6 @@
     <string name="title_activity_info_pessoal">InfoPessoalActivity</string>
     <string name="tipo_sangu_neo">Tipo Sanguíneo</string>
     <string name="alergias">Alergias</string>
+     <string name="relatorio">Relatório</string>
 
 </resources>

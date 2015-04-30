@@ -38,6 +38,15 @@
             android:label="@string/title_activity_info_pessoal" >
         </activity>
         
+         <activity
+            android:name="com.techkers.autoblackbox.RelatorioActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+         <activity
+            android:name="com.techkers.autoblackbox.AlertaActivity"
+            android:label="@string/app_name" >
+        </activity>
 <!--          <receiver android:name="com.divus.exemplobroadcastreceiver.AfterBootBroadcastReceiver" > -->
 <!--             <intent-filter> -->
 <!--                 <action android:name="android.intent.action.BOOT_COMPLETED" /> -->

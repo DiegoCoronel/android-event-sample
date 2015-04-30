@@ -5,7 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
+import android.os.Bundle;
 
+import com.techkers.autoblackbox.AlertaActivity;
+import com.techkers.autoblackbox.RelatorioActivity;
 import com.techkers.autoblackbox.broadcasts.ColisaoBroadcast;
 import com.techkers.autoblackbox.events.Colisao;
 import com.techkers.autoblackbox.events.Colisao.ColisaoCallback;
@@ -46,6 +49,11 @@ public class SensorService extends IntentService {
 				Intent intent = new Intent(ColisaoBroadcast.ACTION_COLISAO);
 				service.sendBroadcast(intent);
 				ultimoEvento = System.currentTimeMillis();
+				
+				Intent intentRelatorio = new Intent(service, AlertaActivity.class);
+				intentRelatorio.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				service.startActivity(intentRelatorio);
+				
 			}
 		}
 	}

@@ -41,9 +41,11 @@
 		    android:text="O AVISO SERÁ ENVIADO EM:"
 		    android:textColor="#ffffff"
 		    android:textSize="14sp"
-		    android:textStyle="bold" ></TextView>
+		    android:textStyle="bold" >
+		</TextView>
 		
 		<TextView
+		    android:id="@+id/contador"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
 		    android:layout_marginBottom="16dp"
@@ -55,6 +57,7 @@
 		    android:textSize="76sp" ></TextView>
 
 		<Button
+		    android:id="@+id/botaoCancelar"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:layout_gravity="center"
